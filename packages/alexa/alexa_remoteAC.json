@@ -1,0 +1,148 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my device",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hello",
+                        "how are you",
+                        "say hi world",
+                        "say hi",
+                        "hi",
+                        "say hello world",
+                        "say hello"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "coldTemperature",
+                    "slots": [
+                        {
+                            "name": "temperature",
+                            "type": "AMAZON.NUMBER",
+                            "multipleValues": {
+                                "enabled": false
+                            }
+                        }
+                    ],
+                    "samples": [
+                        "to set {temperature}",
+                        "to set to {temperature}",
+                        "to set cold temperature to {temperature}",
+                        "to set temperature to {temperature}"
+                    ]
+                },
+                {
+                    "name": "turnOffAC",
+                    "slots": [],
+                    "samples": [
+                        "to turn off AC",
+                        "to turn off",
+                        "to set off",
+                        "turn off",
+                        "turn off AC"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "coldTemperature",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "temperature",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {},
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.1196472467721.1254644550022.143035762482",
+                                    "values": [
+                                        "22",
+                                        "23",
+                                        "24",
+                                        "25",
+                                        "26",
+                                        "27",
+                                        "28",
+                                        "29",
+                                        "22.5",
+                                        "21.5",
+                                        "20.5",
+                                        "29.5",
+                                        "28.5",
+                                        "27.5",
+                                        "26.5",
+                                        "25.5",
+                                        "30",
+                                        "24.5",
+                                        "23.5",
+                                        "16",
+                                        "17",
+                                        "18",
+                                        "19",
+                                        "19.5",
+                                        "18.5",
+                                        "17.5",
+                                        "16.5",
+                                        "20",
+                                        "21"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Intent.1196472467721",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ok. Temperature to {temperature}"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1196472467721.1254644550022.143035762482",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please select a temperature between sixteen and thirty"
+                    }
+                ]
+            }
+        ]
+    }
+}
